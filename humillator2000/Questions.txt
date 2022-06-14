@@ -1,0 +1,25 @@
+-----------Proyecto-------------------------------
+- Refactorización para quitar User de nombre entidades | entidad User por conflicto con palabra reservada | Añadir Entity a cada entidad
+
+- user_group_role se incluye en la key compuesta entre user y user_group?
+
+- Como manejar notificaciones?
+
+- Corregir relaciones notification - user_has_match y user_group_role - user_has_user_group
+
+
+
+-------------Demo-----------------------------
+- DTOs que son? Por que no en user
+- Por que hay menos entidades que tablas y no aqui
+- No interfaces en los servicios
+- Mappers?? | Funcion toEntity??
+
+
+
+---------------Estilos------------------------------
+- Css locos de la demo
+
+
+--------------------Otros------------------------------------
+- Comentarios para delimitar?? Como espaciar bien?

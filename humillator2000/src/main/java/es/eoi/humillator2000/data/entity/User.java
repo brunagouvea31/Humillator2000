@@ -5,7 +5,7 @@ import java.sql.Blob;
 import java.util.Set;
 
 @Entity
-public class HumillatorUsers {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,9 @@ public class HumillatorUsers {
             name = "user_has_role",
             joinColumns = @JoinColumn(name = "user_ID"),
             inverseJoinColumns = @JoinColumn(name = "user_role_ID"))
-    Set<UserRole> userRoles;
+    private Set<UserRole> userRoles;
+
+
 
     // GETTERS & SETTERS
     public Integer getId() {

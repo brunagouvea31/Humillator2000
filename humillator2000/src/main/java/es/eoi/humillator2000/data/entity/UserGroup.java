@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user_group")
 public class UserGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +14,8 @@ public class UserGroup {
 
     @OneToMany(mappedBy = "userGroup")
     private Set<Match> matches;
+
+
 
     public Integer getId() {
         return id;

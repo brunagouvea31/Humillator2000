@@ -29,11 +29,9 @@ public class Match {
     private Boolean delete;
 
     @ManyToOne
-    @JoinColumn(name = "season_ID")
     private Season season;
 
     @ManyToOne
-    @JoinColumn(name = "user_group_ID")
     private UserGroup userGroup;
 
     @OneToMany(mappedBy = "match")
