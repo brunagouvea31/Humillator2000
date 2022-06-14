@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class UserGroup {
+@Table(name = "user_role")
+public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,11 +13,10 @@ public class UserGroup {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "userGroup")
-    private Set<Match> matches;
+    @ManyToMany(mappedBy = "userRoles")
+    private Set<User> users;
 
-
-
+    // GETTERS & SETTERS
     public Integer getId() {
         return id;
     }
@@ -33,11 +33,11 @@ public class UserGroup {
         this.name = name;
     }
 
-    public Set<Match> getMatches() {
-        return matches;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public void setMatches(Set<Match> matches) {
-        this.matches = matches;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
