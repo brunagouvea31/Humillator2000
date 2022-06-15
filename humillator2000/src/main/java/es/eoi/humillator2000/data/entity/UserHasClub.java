@@ -13,16 +13,17 @@ public class UserHasUserGroup {
     @ManyToOne
     @JoinColumn(name = "user_group_ID")
     @MapsId("userGroupId")
-    private UserGroup userGroup;
+    private Club club;
 
     @ManyToOne
     @JoinColumn(name = "user_ID")
     @MapsId("userId")
     private User user;
 
-    // Se incluye en la key compuesta o separado como otra relacion??
     @ManyToOne
-    private UserGroupRole userGroupRole;
+    @JoinColumn(name = "user_ID")
+    @MapsId("userRoleId")
+    private ClubRole clubRole;
 
 
 
@@ -42,12 +43,12 @@ public class UserHasUserGroup {
         this.rating = rating;
     }
 
-    public UserGroup getUserGroup() {
-        return userGroup;
+    public Club getUserGroup() {
+        return club;
     }
 
-    public void setUserGroup(UserGroup userGroup) {
-        this.userGroup = userGroup;
+    public void setUserGroup(Club club) {
+        this.club = club;
     }
 
     public User getUser() {
@@ -58,11 +59,11 @@ public class UserHasUserGroup {
         this.user = user;
     }
 
-    public UserGroupRole getUserGroupRole() {
-        return userGroupRole;
+    public ClubRole getUserGroupRole() {
+        return clubRole;
     }
 
-    public void setUserGroupRole(UserGroupRole userGroupRole) {
-        this.userGroupRole = userGroupRole;
+    public void setUserGroupRole(ClubRole clubRole) {
+        this.clubRole = clubRole;
     }
 }
