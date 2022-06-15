@@ -13,7 +13,7 @@ public class UserRole {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "userRoles")
+    @ManyToMany(mappedBy = "userRoles", fetch = FetchType.LAZY)
     private Set<User> users;
 
     // GETTERS & SETTERS

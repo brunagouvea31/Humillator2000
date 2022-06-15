@@ -8,6 +8,7 @@ public class UserHasUserGroupId implements Serializable {
     private static final long serialVersionUID = 2742452792947774020L;
     private Integer userId;
     private Integer userGroupId;
+    private Integer userRoleId;
 
 
     public Integer getUserId() {
@@ -24,5 +25,13 @@ public class UserHasUserGroupId implements Serializable {
 
     public void setUserGroupId(Integer userGroupId) {
         this.userGroupId = userGroupId;
+    }
+
+    public Integer getUserRoleId() {
+        return userRoleId;
+    }
+
+    public void setUserRoleId(Integer userRoleId) {
+        this.userRoleId = userRoleId;
     }
 }
