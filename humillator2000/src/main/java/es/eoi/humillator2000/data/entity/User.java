@@ -5,6 +5,7 @@ import java.sql.Blob;
 import java.util.Set;
 
 @Entity
+@Table(name = "humillator_user")
 public class User {
 
     @Id
@@ -27,7 +28,7 @@ public class User {
             name = "user_has_role",
             joinColumns = @JoinColumn(name = "user_ID"),
             inverseJoinColumns = @JoinColumn(name = "user_role_ID"))
-    private Set<UserRole> userRoles;
+    private Set<Role> roles;
 
 
 
@@ -72,11 +73,11 @@ public class User {
         this.email = email;
     }
 
-    public Set<UserRole> getUserRoles() {
-        return userRoles;
+    public Set<Role> getUserRoles() {
+        return roles;
     }
 
-    public void setRoles(Set<UserRole> roles) {
-        this.userRoles = userRoles;
+    public void setRoles(Set<Role> roles) {
+        this.roles = this.roles;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_group_role")
-public class UserGroupRole {
+public class ClubRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,8 +13,8 @@ public class UserGroupRole {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "userGroupRole")
-    private Set<UserHasUserGroup> usersWithgroup;
+    @OneToMany(mappedBy = "clubRole")
+    private Set<UserHasClub> usersWithgroup;
 
     // GETTERS & SETTERS
 
@@ -34,11 +34,11 @@ public class UserGroupRole {
         this.name = name;
     }
 
-    public Set<UserHasUserGroup> getUsersWithgroup() {
+    public Set<UserHasClub> getUsersWithgroup() {
         return usersWithgroup;
     }
 
-    public void setUsersWithgroup(Set<UserHasUserGroup> usersWithgroup) {
+    public void setUsersWithgroup(Set<UserHasClub> usersWithgroup) {
         this.usersWithgroup = usersWithgroup;
     }
 }

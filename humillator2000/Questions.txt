@@ -7,6 +7,7 @@
 
 - Corregir relaciones notification - user_has_match y user_group_role - user_has_user_group
 
+- Funciones findBy en repositorios
 
 
 -------------Demo-----------------------------
