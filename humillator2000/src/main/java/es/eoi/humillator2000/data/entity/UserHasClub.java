@@ -3,16 +3,16 @@ package es.eoi.humillator2000.data.entity;
 import javax.persistence.*;
 
 @Entity
-public class UserHasUserGroup {
+public class UserHasClub {
 
     @EmbeddedId
-    private UserHasUserGroupId id;
+    private UserHasClubId id;
 
     private Float rating;
 
     @ManyToOne
-    @JoinColumn(name = "user_group_ID")
-    @MapsId("userGroupId")
+    @JoinColumn(name = "club_ID")
+    @MapsId("clubId")
     private Club club;
 
     @ManyToOne
@@ -21,17 +21,17 @@ public class UserHasUserGroup {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "user_ID")
-    @MapsId("userRoleId")
+    @JoinColumn(name = "club_role_ID")
+    @MapsId("roleId")
     private ClubRole clubRole;
 
 
 
-    public UserHasUserGroupId getId() {
+    public UserHasClubId getId() {
         return id;
     }
 
-    public void setId(UserHasUserGroupId id) {
+    public void setId(UserHasClubId id) {
         this.id = id;
     }
 

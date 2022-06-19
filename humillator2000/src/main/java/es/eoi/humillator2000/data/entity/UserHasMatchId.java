@@ -3,6 +3,7 @@ package es.eoi.humillator2000.data.entity;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 public class UserHasMatchId implements Serializable {
@@ -24,5 +25,18 @@ public class UserHasMatchId implements Serializable {
 
     public void setMatchId(Integer matchId) {
         this.matchId = matchId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserHasMatchId)) return false;
+        UserHasMatchId that = (UserHasMatchId) o;
+        return Objects.equals(getUserId(), that.getUserId()) && Objects.equals(getMatchId(), that.getMatchId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserId(), getMatchId());
     }
 }
