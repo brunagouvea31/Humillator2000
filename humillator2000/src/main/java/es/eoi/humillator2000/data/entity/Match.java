@@ -32,7 +32,7 @@ public class Match {
     private Season season;
 
     @ManyToOne
-    private UserGroup userGroup;
+    private Club club;
 
     @OneToMany(mappedBy = "match")
     private Set<UserHasMatch> userHasMatches;
@@ -45,12 +45,12 @@ public class Match {
         this.userHasMatches = userHasMatches;
     }
 
-    public UserGroup getUserGroup() {
-        return userGroup;
+    public Club getUserGroup() {
+        return club;
     }
 
-    public void setUserGroup(UserGroup userGroup) {
-        this.userGroup = userGroup;
+    public void setUserGroup(Club club) {
+        this.club = club;
     }
 
     public Integer getId() {

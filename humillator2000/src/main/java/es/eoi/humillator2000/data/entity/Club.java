@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class UserGroup {
+public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,7 +12,7 @@ public class UserGroup {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "userGroup")
+    @OneToMany(mappedBy = "club")
     private Set<Match> matches;
 
 

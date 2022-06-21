@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_role")
-public class UserRole {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,7 +13,7 @@ public class UserRole {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "userRoles", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Set<User> users;
 
     // GETTERS & SETTERS
