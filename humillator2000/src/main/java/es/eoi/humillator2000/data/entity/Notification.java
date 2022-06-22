@@ -3,7 +3,7 @@ package es.eoi.humillator2000.data.entity;
 import javax.persistence.*;
 
 @Entity
-public class Notification {
+public class Notification implements IEntity<Integer>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,7 @@ public class Notification {
     @ManyToOne
     private UserHasMatch userHasMatch;
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     public void setId(Integer id) {
         this.id = id;
