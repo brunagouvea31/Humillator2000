@@ -1,0 +1,42 @@
+package es.eoi.humillator2000.controller;
+
+
+import es.eoi.humillator2000.data.entity.Notification;
+import es.eoi.humillator2000.service.NotificationService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/notification")
+public class NotificationRestController {
+    final private NotificationService notificationService;
+
+    public NotificationRestController(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }
+
+    @GetMapping
+    public List<Notification> findAll(){
+        return notificationService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Notification findById(@PathVariable("id") Integer id){
+        return notificationService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id")Integer id){
+        notificationService.deleteById(id);
+    }
+
+    @PostMapping
+    public Notification save(Notification notification){
+        return notificationService.save(notification);
+    }
+    @PutMapping
+    public Notification update(Notification notification){
+        return notificationService.update(notification);
+    }
+}

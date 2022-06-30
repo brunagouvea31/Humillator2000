@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "humillator_user")
-public class User {
+public class User implements IEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
