@@ -10,9 +10,16 @@ import java.util.List;
 @Service
 public class ClubService extends AbstractService<Integer, Club, ClubRepository>{
 
+
     @Autowired
     public ClubService(ClubRepository repository) {
         super(repository);
     }
+
+    public List<Club> getClubsByUserId(Integer id){
+        return super.getRepository().findByUserHashClubsUserId(id);
+    }
+
+
 
 }

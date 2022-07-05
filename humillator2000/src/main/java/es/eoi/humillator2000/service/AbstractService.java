@@ -3,9 +3,11 @@ package es.eoi.humillator2000.service;
 
 import es.eoi.humillator2000.data.entity.IEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public abstract class AbstractService<ID, E extends IEntity<ID>, R extends JpaRepository<E, ID>> {
@@ -15,8 +17,8 @@ public abstract class AbstractService<ID, E extends IEntity<ID>, R extends JpaRe
         this.repository = repository;
     }
 
-    public List<E> findAll() {
-        return repository.findAll();
+    public Page<E> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     public E findById(ID id) {
@@ -29,17 +31,19 @@ public abstract class AbstractService<ID, E extends IEntity<ID>, R extends JpaRe
 
     public E save(E e) {
         if (e.getId() != null) {
-            throw new RuntimeException("TO DO");
+            throw new RuntimeException("Ya existe");
         }
         return repository.save(e);
     }
 
     public E update(E e) {
         if (e.getId() == null) {
-            throw new RuntimeException("TODO");
+            throw new RuntimeException("No existe");
         }
         return repository.save(e);
     }
 
-
+    protected R getRepository() {
+        return repository;
+    }
 }

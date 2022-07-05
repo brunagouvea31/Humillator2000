@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_role")
-public class Role {
+public class Role implements IEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
