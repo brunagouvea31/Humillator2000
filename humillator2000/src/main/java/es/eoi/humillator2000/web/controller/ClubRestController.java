@@ -1,4 +1,4 @@
-package es.eoi.humillator2000.controller;
+package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Club;
 import es.eoi.humillator2000.service.ClubService;
@@ -36,9 +36,13 @@ public class ClubRestController {
     public Club save(Club club){
         return clubService.save(club);
     }
+
     @PutMapping
     public Club update(Club club){
         return clubService.update(club);
     }
+
+    @PostMapping("/{id}/user")
+    public void addUser(@PathVariable("id") Integer id, Integer userId){}
 
 }

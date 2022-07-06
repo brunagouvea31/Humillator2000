@@ -1,0 +1,119 @@
+[33mcommit ca739abe3346f7d83df00a5aadfeb6b57a4c5a1f[m[33m ([m[1;36mHEAD -> [m[1;32mbernyBranch[m[33m)[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Thu Jun 23 01:36:05 2022 +0200
+
+    Meeting with Kike 20/06
+
+[33mcommit 847977cd17f4ef9df699d2f67b89836c47b71430[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: f9eafc0 5f1e5a5
+Author: Jmabeg <106088066+Jmabeg@users.noreply.github.com>
+Date:   Thu Jun 23 00:42:57 2022 +0200
+
+    Merge pull request #5 from brunagouvea31/main
+    
+    Merge pull request #1 from orlanjavaproyect/main
+
+[33mcommit 5f1e5a5afdee0a0164f9690df6361c2a2d966ef2[m
+Merge: 9b5c038 f9eafc0
+Author: brunagouvea31 <105054137+brunagouvea31@users.noreply.github.com>
+Date:   Tue Jun 21 11:51:23 2022 +0100
+
+    Merge pull request #1 from orlanjavaproyect/main
+    
+    Cambios
+
+[33mcommit f9eafc07da84624d1550f85d06bc628c02eba68b[m
+Merge: 9b5c038 98318ed
+Author: Jmabeg <106088066+Jmabeg@users.noreply.github.com>
+Date:   Sun Jun 19 17:34:55 2022 +0200
+
+    Merge pull request #3 from Jmabeg/main
+    
+    Restore
+
+[33mcommit 98318ed487a5e83182979a33e5adb42fc3b64444[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Sun Jun 19 17:29:36 2022 +0200
+
+    Restore
+
+[33mcommit 9b5c038edf859b2e36d39575d40c86e0b8cb8e8f[m
+Merge: cf31aa5 06720ea
+Author: Jmabeg <106088066+Jmabeg@users.noreply.github.com>
+Date:   Wed Jun 15 16:42:52 2022 +0200
+
+    Merge pull request #2 from Jmabeg/main
+    
+    Meeting with Kike - 14/06/22
+
+[33mcommit 06720eaf9d21d4fe11e5505ae663b795b7eadd5d[m
+Merge: 7be5e9a cf31aa5
+Author: Jmabeg <106088066+Jmabeg@users.noreply.github.com>
+Date:   Wed Jun 15 16:38:58 2022 +0200
+
+    Merge pull request #1 from orlanjavaproyect/main
+    
+    Merge pull request #1 from Jmabeg/main
+
+[33mcommit 7be5e9a2009c37137650f4eedaae86f174dc5cfa[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Wed Jun 15 16:32:36 2022 +0200
+
+    Entities refactorized, Added ClubService with findAll and findById methods
+
+[33mcommit cf31aa5f32479073a67f1c5ed31ca3ffb67e8ed8[m
+Merge: 5c48f9d 4a68e0a
+Author: Jmabeg <106088066+Jmabeg@users.noreply.github.com>
+Date:   Tue Jun 14 11:32:34 2022 +0200
+
+    Merge pull request #1 from Jmabeg/main
+    
+    Entities
+
+[33mcommit 4a68e0adb50ed8a041bf09d3581f734e4fab8377[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Tue Jun 14 03:01:56 2022 +0200
+
+    Added DateUtil for time formatting and manipulation
+
+[33mcommit 74ee7aa8f2be51890dd2a6159cdde5a663d497e6[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Tue Jun 14 02:58:46 2022 +0200
+
+    Added iml file
+
+[33mcommit 25543e24d18956c6d457d43a32eb522770ee3ff3[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Tue Jun 14 02:48:13 2022 +0200
+
+    Renamed Matchrepository to MatchRepository | Added getters and setter for every entity
+
+[33mcommit 20cbb6abab72005fb9c0e6abd37d55f208e84832[m
+Author: jmabeg <josemariabernues@gmail.com>
+Date:   Tue Jun 14 02:40:26 2022 +0200
+
+    Added entities and relations between them | Added all repositories | Added Questions.txt file
+
+[33mcommit 5c48f9dd75dd35dcc0c977bd3e607257c7ef2844[m
+Author: orlanjavaproyect <105759921+orlanjavaproyect@users.noreply.github.com>
+Date:   Fri Jun 10 13:58:16 2022 +0200
+
+    Add files via upload
+
+[33mcommit 1615e5dc3fb9f97759af6ec0e1ec22f9c4b38f14[m
+Author: orlanjavaproyect <105759921+orlanjavaproyect@users.noreply.github.com>
+Date:   Fri Jun 10 13:57:53 2022 +0200
+
+    Delete Diagrama Peña  Humillator 2000.mwb
+
+[33mcommit af1a4e92887442665f084fb3fa7f3cc2a9ab2a17[m
+Author: orlanjavaproyect <105759921+orlanjavaproyect@users.noreply.github.com>
+Date:   Thu Jun 9 04:15:15 2022 +0200
+
+    Add files via upload
+
+[33mcommit ce10c651dd74aea36f594c426214ee60baf158d3[m
+Author: orlanjavaproyect <105759921+orlanjavaproyect@users.noreply.github.com>
+Date:   Thu Jun 9 04:11:30 2022 +0200
+
+    Initial commit
