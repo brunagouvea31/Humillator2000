@@ -1,14 +1,13 @@
-package es.eoi.humillator2000.data.dto;
+package es.eoi.humillator2000.web.dto;
 
 import es.eoi.humillator2000.data.entity.Match;
-import es.eoi.humillator2000.data.entity.UserHasClub;
 
 import java.util.Set;
 
-public class ClubRoleDTO {
+public class ClubDTO {
     private Integer id;
     private String name;
-    private Set<UserHasClub> usersWithgroup;
+
 
     public Integer getId() {
         return id;
@@ -26,11 +25,5 @@ public class ClubRoleDTO {
         this.name = name;
     }
 
-    public Set<UserHasClub> getUsersWithgroup() {
-        return usersWithgroup;
-    }
 
-    public void setUsersWithgroup(Set<UserHasClub> usersWithgroup) {
-        this.usersWithgroup = usersWithgroup;
-    }
 }

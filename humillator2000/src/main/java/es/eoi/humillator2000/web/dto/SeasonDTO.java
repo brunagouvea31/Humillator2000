@@ -1,4 +1,4 @@
-package es.eoi.humillator2000.data.dto;
+package es.eoi.humillator2000.web.dto;
 
 import es.eoi.humillator2000.data.entity.Match;
 
@@ -10,11 +10,10 @@ public class SeasonDTO {
     private Integer id;
     private String name;
 
-    // VER MATCHDTO
     private String startingDate;
     private String endingDate;
 
-    private Set<Match> matches;
+
 
     public Integer getId() {
         return id;
@@ -48,11 +47,4 @@ public class SeasonDTO {
         this.endingDate = endingDate;
     }
 
-    public Set<Match> getMatches() {
-        return matches;
-    }
-
-    public void setMatches(Set<Match> matches) {
-        this.matches = matches;
-    }
 }

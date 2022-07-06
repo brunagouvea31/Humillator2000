@@ -1,4 +1,4 @@
-package es.eoi.humillator2000.data.dto;
+package es.eoi.humillator2000.web.dto;
 
 import es.eoi.humillator2000.data.entity.Club;
 import es.eoi.humillator2000.data.entity.Season;
@@ -13,16 +13,19 @@ public class MatchDTO {
     // LO RECIBE EN STRING DE BBDD SE CONVIERTE A FORMATO EN MAPPER
     private String startingDate;
     private String endingDate;
+
     private String description;
     private String title;
     private String location;
     private Double price;
     private Boolean delete;
+
+    // TRANSFORMAR A ID
     private Season season;
     private Club club;
 
-    // SE DEJA TAL CUAL ??
-    private Set<UserHasMatch> userHasMatches;
+    // SET INTS
+    private Set<Integer> userIds;
 
 
 
@@ -106,11 +109,11 @@ public class MatchDTO {
         this.club = club;
     }
 
-    public Set<UserHasMatch> getUserHasMatches() {
-        return userHasMatches;
+    public Set<Integer> getUserIds() {
+        return userIds;
     }
 
-    public void setUserHasMatches(Set<UserHasMatch> userHasMatches) {
-        this.userHasMatches = userHasMatches;
+    public void setUserIds(Set<Integer> userIds) {
+        this.userIds = userIds;
     }
 }

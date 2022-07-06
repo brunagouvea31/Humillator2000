@@ -1,4 +1,4 @@
-package es.eoi.humillator2000.controller;
+package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Role;
 import es.eoi.humillator2000.service.RoleService;

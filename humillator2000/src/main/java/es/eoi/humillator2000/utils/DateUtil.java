@@ -1,4 +1,4 @@
-package es.eoi.humillator2000.service.utils;
+package es.eoi.humillator2000.utils;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

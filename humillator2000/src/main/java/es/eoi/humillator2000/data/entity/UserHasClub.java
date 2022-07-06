@@ -66,4 +66,20 @@ public class UserHasClub {
     public void setUserGroupRole(ClubRole clubRole) {
         this.clubRole = clubRole;
     }
+
+    public Club getClub() {
+        return club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
+    }
+
+    public ClubRole getClubRole() {
+        return clubRole;
+    }
+
+    public void setClubRole(ClubRole clubRole) {
+        this.clubRole = clubRole;
+    }
 }
