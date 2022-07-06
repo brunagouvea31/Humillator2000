@@ -2,6 +2,7 @@ package es.eoi.humillator2000.data.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,13 +12,13 @@ public class Season implements IEntity<Integer> {
     private Integer id;
 
     @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
     private LocalDateTime startingDate;
 
     @Column(nullable = false)
     private LocalDateTime endingDate;
-
-    @Column(nullable = false)
-    private String name;
 
     @OneToMany(mappedBy = "season")
     private Set<Match> matches;
@@ -56,7 +57,7 @@ public class Season implements IEntity<Integer> {
         this.name = name;
     }
 
-    public Set<Match> getMatches() {
+    public List<Match> getMatches() {
         return matches;
     }
 

@@ -1,26 +1,20 @@
 -----------Proyecto-------------------------------
-- Refactorización para quitar User de nombre entidades | entidad User por conflicto con palabra reservada | Añadir Entity a cada entidad
-
-- user_group_role se incluye en la key compuesta entre user y user_group?
-
-- Como manejar notificaciones?
-
-- Corregir relaciones notification - user_has_match y user_group_role - user_has_user_group
-
-- Funciones findBy en repositorios
-
+- DTOs de relaciones especiales
+- BLOB EN USER + USERDTO?
 
 -------------Demo-----------------------------
-- DTOs que son? Por que no en user
-- Por que hay menos entidades que tablas y no aqui
-- No interfaces en los servicios
-- Mappers?? | Funcion toEntity??
+- DTOs no en user
+- Cuando serializable?
+- En TaskDTO en lugar de atributo User es Integer | Cuando guarda en TaskService tiene que hacer busqueda
+    En Menu con otra ManyToOne se pasa el objeto Menu | ????
+- En Role hay una ManyToMany a User pero en su DTO se omite como atributo | No necesitamos acceder usuarios a traves de rol?
+    Aunque es Eager? | Es porque no se crean usuarios?
+- Los DTOs UserHas... deben existir porque hay atributos extra, pero los UserHas...Id? deben pasarse a DTO estas entidades
+    para guardar la relación entre ids o al instanciarse en las UserHas...
 
 
 
----------------Estilos------------------------------
+
+---------------OTROS------------------------------
 - Css locos de la demo
 
-
---------------------Otros------------------------------------
-- Comentarios para delimitar?? Como espaciar bien?

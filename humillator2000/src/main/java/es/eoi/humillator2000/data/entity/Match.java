@@ -124,4 +124,12 @@ public class Match implements IEntity<Integer> {
     public void setSeason(Season season) {
         this.season = season;
     }
+
+    public Club getClub() {
+        return club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
+    }
 }
