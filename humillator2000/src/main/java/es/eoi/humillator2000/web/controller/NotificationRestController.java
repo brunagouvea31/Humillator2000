@@ -1,7 +1,11 @@
 package es.eoi.humillator2000.web.controller;
 
 
+import es.eoi.humillator2000.data.entity.Club;
 import es.eoi.humillator2000.data.entity.Notification;
+import es.eoi.humillator2000.data.repository.ClubRepository;
+import es.eoi.humillator2000.data.repository.NotificationRepository;
+import es.eoi.humillator2000.service.ClubService;
 import es.eoi.humillator2000.service.NotificationService;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,34 +13,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notification")
-public class NotificationRestController {
-    final private NotificationService notificationService;
+public class NotificationRestController extends AbstractRestController<NotificationService, Notification,Integer, NotificationRepository>{
 
-    public NotificationRestController(NotificationService notificationService) {
-        this.notificationService = notificationService;
-    }
-
-    @GetMapping
-    public List<Notification> findAll(){
-        return notificationService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Notification findById(@PathVariable("id") Integer id){
-        return notificationService.findById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id")Integer id){
-        notificationService.deleteById(id);
-    }
-
-    @PostMapping
-    public Notification save(Notification notification){
-        return notificationService.save(notification);
-    }
-    @PutMapping
-    public Notification update(Notification notification){
-        return notificationService.update(notification);
+    protected NotificationRestController(NotificationService service) {
+        super(service);
     }
 }
