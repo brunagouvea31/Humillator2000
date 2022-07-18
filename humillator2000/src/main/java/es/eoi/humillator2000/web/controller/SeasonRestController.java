@@ -1,6 +1,10 @@
 package es.eoi.humillator2000.web.controller;
 
+import es.eoi.humillator2000.data.entity.Club;
 import es.eoi.humillator2000.data.entity.Season;
+import es.eoi.humillator2000.data.repository.ClubRepository;
+import es.eoi.humillator2000.data.repository.SeasonRepository;
+import es.eoi.humillator2000.service.ClubService;
 import es.eoi.humillator2000.service.SeasonService;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,36 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/season")
-public class SeasonRestController {
-
-    private final SeasonService seasonService;
+public class SeasonRestController extends AbstractRestController <SeasonService, Season,Integer, SeasonRepository>{
 
 
-    public SeasonRestController(SeasonService seasonService) {
-        this.seasonService = seasonService;
-    }
-
-    @GetMapping
-    public List<Season> findAll(){
-        return seasonService.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Season findById(@PathVariable("id") Integer id){
-        return seasonService.findById(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id")Integer id){
-        seasonService.deleteById(id);
-    }
-
-    @PostMapping
-    public Season save(Season season){
-        return seasonService.save(season);
-    }
-    @PutMapping
-    public Season update(Season season){
-            return seasonService.update(season);
+    protected SeasonRestController(SeasonService service) {
+        super(service);
     }
 }
