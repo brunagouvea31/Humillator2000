@@ -1,22 +1,42 @@
 package es.eoi.humillator2000.web.controller;
 
 
-import es.eoi.humillator2000.data.entity.Club;
-import es.eoi.humillator2000.data.entity.Match;
-import es.eoi.humillator2000.data.repository.ClubRepository;
-import es.eoi.humillator2000.data.repository.MatchRepository;
-import es.eoi.humillator2000.service.ClubService;
-import es.eoi.humillator2000.service.MatchService;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import es.eoi.humillator2000.data.entity.Match;
+import es.eoi.humillator2000.service.MatchService;
+import es.eoi.humillator2000.web.dto.MatchDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping ("/match")
-public class MatchRestController extends AbstractRestController<MatchService,Match,Integer, MatchRepository> {
+public class MatchRestController {
 
+    private final MatchService matchService;
 
-    protected MatchRestController(MatchService service) {
-        super(service);
+    public MatchRestController(MatchService matchService) {
+        this.matchService = matchService;
     }
+
+    @GetMapping
+    public Page<MatchDTO> findAll(Pageable pageable){
+        return matchService.findAll(pageable);
+    }
+
+    @GetMapping("/{id}")
+    public MatchDTO findById(@PathVariable("id") Integer id){
+        return matchService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id")Integer id){
+        matchService.deleteById(id);
+    }
+
+    @PostMapping
+    public MatchDTO save(MatchDTO matchDTO){
+        return matchService.save(matchDTO);
+    }
+
 }
