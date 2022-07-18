@@ -17,6 +17,7 @@
 		<java.version>11</java.version>
 		<openapi.version>1.6.4</openapi.version>
 		<mapstruct.version>1.5.2.Final</mapstruct.version>
+		<thymeleaf-extras-springsecurity4.version>3.0.1.RELEASE</thymeleaf-extras-springsecurity4.version>
 	</properties>
 
 	<dependencies>
@@ -86,11 +87,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 			<version>${thymeleaf-extras-springsecurity4.version}</version>
+
 		</dependency>
+
+
 	</dependencies>
 
 	<build>

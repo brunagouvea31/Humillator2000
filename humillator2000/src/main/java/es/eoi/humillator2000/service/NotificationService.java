@@ -2,27 +2,18 @@ package es.eoi.humillator2000.service;
 
 import es.eoi.humillator2000.data.entity.Notification;
 import es.eoi.humillator2000.data.repository.NotificationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import es.eoi.humillator2000.service.mapper.NotificationMapper;
+import es.eoi.humillator2000.web.dto.NotificationDTO;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NotificationService extends AbstractService<Integer, Notification, NotificationRepository>{
+public class NotificationService extends AbstractService<Integer, Notification, NotificationRepository, NotificationDTO, NotificationMapper>{
 
     private final NotificationRepository notificationRepository;
 
-    @Autowired
-    public NotificationService(NotificationRepository repository, NotificationRepository notificationRepository) {
-        super(repository);
+
+    public NotificationService(NotificationRepository repository, NotificationMapper mapper, NotificationRepository notificationRepository) {
+        super(repository, mapper);
         this.notificationRepository = notificationRepository;
     }
-
-    public void addNotification (Integer id){
-
-        final Notification notification= this.notificationRepository.findById(id).orElseThrow(()-> new RuntimeException(".........."));
-
-
-    }
-
-
-
 }
