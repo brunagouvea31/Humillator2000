@@ -1,19 +1,11 @@
 package es.eoi.humillator2000.web.controller;
 
-
-import es.eoi.humillator2000.data.entity.ClubRole;
-
 import es.eoi.humillator2000.service.ClubRoleService;
-
-
 import es.eoi.humillator2000.web.dto.ClubRoleDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import org.springframework.web.bind.annotation.*;
-
-
-
 
 @RestController
 @RequestMapping("/clubRole")

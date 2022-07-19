@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+  background-image: url('https://cdn.wallpapersafari.com/86/19/e1wKG0.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/* NAVBAR */
+#ubunetLogo{
+	width: 115px;
+
+}
+
+.navbar-my-style{
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	opacity:  92%;
+
+}
+
+.nav-link{
+	color: #656262 !important;
+	font-weight: bold;
+
+}
+
+.nav-link:hover{
+  color: #28a745 !important;
+}
+
+
+/* NAVBAR BORDER ANIMATION */
+@-webkit-keyframes Border {
+  0% {color: #e8b72e;}
+  50% {color:#a2bd38;}
+  100% {color:#4f87c7;}
+}
+
+#navAnimatedBorder{
+	border-bottom: 3px solid;
+	-webkit-animation:Border 10s infinite alternate;
+}
+/* BODY */
+.container{
+  height: 100%;
+  align-content: center;
+}
+
+.card{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+    margin-top: 16%;
+  background-color: rgba(0,0,0,0.6) !important;
+}
+.card-header h3{
+  color: #188E13 ;
+  font-size: 2.25rem;
+  text-align: center;
+  padding-top: 0.3rem;
+}
+#forgot_password{
+    margin-left: 25%;
+}
+
+.input-group-prepend span{
+  background-color: #188E13  ;
+  color: black;
+  border:0 !important;
+}
+
+input:focus{
+  outline: 0 0 0 0  !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.remember{
+  color: white;
+}
+
+.remember input
+{
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+
+}
+
+.login_btn{
+  color: white;
+  background-color:#4685EC;
+  width: 100px;
+  margin-top: 6%;
+  margin-right: 5px;
+
+}
+.account_btn{
+  color: white;
+  background-color:#188E13  ;
+  width: 355px;
+  margin-top: 6%;
+}
+
+.login_btn:hover{
+  color: black;
+  background-color: #97c124;
+  box-shadow: 0 0 6px #97c124;
+}
+
+.links{
+  color: white;
+}
+
+.links a{
+  margin-left: 4px;
+}
+
+
+
+/* FOOTER */
+.sticky-footer {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background: #000000;
+  color: white;
+  border-top: 2px solid black;
+  padding-bottom: 1.6rem!important;
+}
+
+.sticky-footer2 {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: sticky;
+  background: #000000;
+  color: white;
+  border-top: 2px solid black;
+  padding-bottom: 1.6rem!important;
+}
+
+small{
+	font-weight: 800;
+}

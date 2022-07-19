@@ -1,14 +1,11 @@
 package es.eoi.humillator2000.web.controller;
 
-import es.eoi.humillator2000.data.entity.Club;
 import es.eoi.humillator2000.service.ClubService;
 import es.eoi.humillator2000.web.dto.ClubDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/club")
