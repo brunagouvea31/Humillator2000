@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
 <head>
-    <title th:text="Borrado de club"></title>
+    <title th:text="Delete Match"></title>
 </head>
 <body>
 <div layout:fragment="breadcrumb">
-    <h1 th:text="#{Eliminar.SubMessage}"></h1>
+    <h1 th:text="#{Delete.Subtitle}"></h1>
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> <span th:text="#{Clubs.Title}"/></a></li>
-        <li class="active" th:text="#{Clubs.Delete}"></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i> <span th:text="#{Home.Title}"></span> </a></li>
+        <li class="active" th:text="#{Match.Delete}"></li>
     </ol>
 </div>
 <div layout:fragment="content">
@@ -19,22 +19,18 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">&nbsp;</h3>
                 </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <form role="form" th:object="${club}" method="post">
 
+                <form role="form" th:object="${match}" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <input th:type="hidden" th:field="${club.id}"/>
-                            <label for="club_name" th:text="#{Clubs.Name}"></label>
-                            <input type="text"
-                                   th:field="${club.name}"
-                                   name="club_name" class="form-control" id="club_name" placeholder="Name" disabled/>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
+                            <input th:type="hidden" th:field="${match.id}"/>
 
+                            <label for="match_title" th:text="#{Matches.Title}"></label>
+                            <input type="text" th:field="${match.title}" name="match_title" class="form-control" id="match_title" disabled/>
+                        </div>
+                    </div>
                 </form>
+
             </div>
         </div>
     </div>

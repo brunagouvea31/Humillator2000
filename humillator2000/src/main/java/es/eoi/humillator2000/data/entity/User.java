@@ -23,8 +23,8 @@ public class User implements IEntity<Integer> {
     @Column(nullable = false)
     private String password;
 
-    // BLOB??
-    private Blob avatar;
+
+    private byte[] avatar;
 
     private String email;
 

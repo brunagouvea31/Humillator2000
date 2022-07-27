@@ -3,20 +3,24 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Clubs details</title>
+    <title>Match</title>
 </head>
 <body>
-<div layout:fragment="breadcrumb" th:object="${club}">
-    <h1>Clubs Management</h1>
+<div layout:fragment="breadcrumb" th:object="${match}">
+    <h1>Match Detail</h1>
     <ol class="breadcrumb">
+        <!-- Necesario introducir todas a mano? -->
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/clubs"><i class="fa fa-tasks"></i> Clubs</a></li>
-        <li class="active" th:utext="@{'Club ID: <b>' + ${Clubs.Id}} + '</b>'"></li>
+
+
+        <!-- Si uso esto estoy cogiendo de message.properties y no el valor? -->
+        <li class="active" th:utext="@{'Match ID: <b>' + ${Matches.Id}} + '</b>'"></li>
     </ol>
 </div>
 
 <div layout:fragment="content">
-    <form role="form" th:object="${club}" method="post" action="#" th:action="@{'/clubs/detail' + ${club.id} + '/delete'}">
+    <form role="form" th:object="${match}" method="post" action="#" th:action="@{'/match/detail' + ${match.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -25,27 +29,88 @@
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Clubs.Name}"></label>
-                                        <p id="name" th:text="${club.name}"/>
+                                        <label for="match_strDate" th:text="#{Matches.StartingDate}"></label>
+                                        <p th:field="${match.startingDate}" id="match_strDate"></p>
                                     </div>
                                 </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_endDate" th:text="#{Matches.EndingDate}"></label>
+                                        <p th:field="${match.endingDate}" id="match_endDate"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_title" th:text="#{Matches.Title}"></label>
+                                        <p th:field="${match.title}" id="match_title"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_description" th:text="#{Matches.Description}"></label>
+                                        <p th:field="${match.description}" id="match_description"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_location" th:text="#{Matches.Location}"></label>
+                                        <p th:field="${match.location}" id="match_location"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_price" th:text="#{Matches.Price}"></label>
+                                        <p th:field="${match.price}" id="match_price"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_delete" th:text="#{Matches.Delete}"></label>
+                                        <p th:field="${match.delete}" id="match_delete"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_season" th:text="#{Matches.Season}"></label>
+                                        <p th:field="${match.season}" id="match_season"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_club" th:text="#{Matches.Title}"></label>
+                                        <p th:field="${match.club}" id="match_club"></p>
+                                    </div>
+                                </div>
+
+                                <!-- Usuarios tabla has? -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="match_users" th:text="#{Matches.Title}"></label>
+                                        <p th:field="${match.club}" id="match_users"></p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/clubs/detail}" class="btn btn-default" role="button"
-                       title="Back list" th:text="#{General.Back}">
+                    <a th:href="@{/match/detail}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/clubs/detail' + ${club.id} + '/edit'}" class="btn btn-primary" role="button"
-                       title="Back list" th:text="#{General.Edit}">
+                    <a th:href="@{'/match/detail' + ${match.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <button type="submit" class="box-title btn btn-danger"
-                            title="Save Data" th:text="#{General.Delete}">
-                    </button>
+                    <button type="submit" class="box-title btn btn-danger" title="Save Data" th:text="#{General.Delete}"></button>
                 </div>
             </div>
         </div>

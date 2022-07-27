@@ -10,14 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService extends AbstractService<Integer, User, UserRepository, UserDTO, UserMapper> {
 
-    private final UserRepository userRepository;
-
-    private final RoleRepository roleRepository;
-
 
     public UserService(UserRepository repository, UserMapper mapper, UserRepository userRepository, RoleRepository roleRepository) {
         super(repository, mapper);
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
     }
 }
