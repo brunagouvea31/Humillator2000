@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-07-13T11:46:58+0200",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 18.0.1 (Oracle Corporation)"
+    date = "2022-07-26T16:23:02+0200",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 17.0.3 (Oracle Corporation)"
 )
 @Component
 public class NotificationMapperImpl implements NotificationMapper {
@@ -25,7 +25,7 @@ public class NotificationMapperImpl implements NotificationMapper {
 
         notification.setId( dto.getId() );
         notification.setMinutes( dto.getMinutes() );
-        notification.setIsNotifyed( dto.getIsNotifyed() );
+        notification.setIsNotified( dto.getIsNotified() );
 
         return notification;
     }
@@ -40,7 +40,7 @@ public class NotificationMapperImpl implements NotificationMapper {
 
         notificationDTO.setId( entity.getId() );
         notificationDTO.setMinutes( entity.getMinutes() );
-        notificationDTO.setIsNotifyed( entity.getIsNotifyed() );
+        notificationDTO.setIsNotified( entity.getIsNotified() );
 
         return notificationDTO;
     }

@@ -9,7 +9,7 @@ import lombok.Setter;
 public class NotificationDTO {
     private Integer id;
     private Integer minutes;
-    private Boolean isNotifyed;
+    private Boolean isNotified;
 
     // ENTERO CON USERID y MATCHID
     private Integer userId;

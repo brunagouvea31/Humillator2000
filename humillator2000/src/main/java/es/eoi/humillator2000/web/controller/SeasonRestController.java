@@ -1,15 +1,10 @@
 package es.eoi.humillator2000.web.controller;
 
-import es.eoi.humillator2000.data.entity.Club;
-import es.eoi.humillator2000.data.entity.Season;
-import es.eoi.humillator2000.data.repository.ClubRepository;
-import es.eoi.humillator2000.data.repository.SeasonRepository;
-import es.eoi.humillator2000.service.ClubService;
+
 import es.eoi.humillator2000.service.SeasonService;
 import es.eoi.humillator2000.web.dto.SeasonDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

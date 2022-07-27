@@ -8,7 +8,6 @@ public interface EntityMapper<D, E> {
     E toEntity(D dto);
 
     D toDto(E entity);
-    Page<D> toDto(Page<E> entity);
 
     List<E> toEntity(List<D> dtoList);
 

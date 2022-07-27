@@ -18,7 +18,7 @@ public class Notification implements IEntity<Integer>{
     @Column(nullable = false)
     private Integer minutes;
 
-    private Boolean isNotifyed;
+    private Boolean isNotified;
 
     @ManyToOne
     private UserHasMatch userHasMatch;

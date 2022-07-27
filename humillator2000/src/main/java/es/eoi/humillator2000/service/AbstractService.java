@@ -17,12 +17,19 @@ public abstract class AbstractService<ID, E extends IEntity<ID>, R extends JpaRe
         this.mapper = mapper;
     }
 
+    /*
     public Page<DTO> findAll(Pageable pageable) {
         return mapper.toDto(repository.findAll(pageable));
     }
+    */
 
     public DTO findById(ID id) {
         return mapper.toDto(repository.findById(id).orElse(null));
+    }
+
+    public Page<DTO> findAll(Pageable pageable) {
+
+        return this.repository.findAll(pageable).map(mapper::toDto);
     }
 
     public void deleteById(ID id) {

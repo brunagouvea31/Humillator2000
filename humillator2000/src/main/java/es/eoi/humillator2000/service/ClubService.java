@@ -40,6 +40,7 @@ public class ClubService extends AbstractService<Integer, Club, ClubRepository, 
 
         return this.userHasClubRepository.save(userHasClub);
     }
+    
     public void deleteUser (Integer id, Integer userId){
         final User user = this.userRepository.findById(userId).orElseThrow(()-> new RuntimeException("No existe usuario para el id + ID----------"));
         final Club club = this.getRepository().findById(id).orElseThrow(()-> new RuntimeException("No ID CLUB"));
