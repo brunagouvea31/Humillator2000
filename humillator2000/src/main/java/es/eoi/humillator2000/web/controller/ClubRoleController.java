@@ -1,8 +1,8 @@
 package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.User;
-import es.eoi.humillator2000.service.ClubService;
-import es.eoi.humillator2000.web.dto.ClubDTO;
+import es.eoi.humillator2000.service.ClubRoleService;
+import es.eoi.humillator2000.web.dto.ClubRoleDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -23,55 +23,55 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Controller
-public class ClubController extends AbstractController<ClubDTO> {
+public class ClubRoleController extends AbstractController<ClubRoleDTO> {
 
-    private final ClubService service;
+    private final ClubRoleService service;
 
     @Autowired
-    public ClubController(ClubService service) {
+    public ClubRoleController(ClubRoleService service) {
         this.service = service;
     }
 
-    @GetMapping("/clubs")
+    @GetMapping("/clubroles")
     public String getAll(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
                          Model model) {
         final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-        final Page<ClubDTO> all = this.service.findAll( PageRequest.of(page.orElse(1) - 1, size.orElse(10)));
+        final Page<ClubRoleDTO> all = this.service.findAll( PageRequest.of(page.orElse(1) - 1, size.orElse(10)));
         model
                 .addAttribute("username", user.getLogin())
-                .addAttribute("clubs", all)
+                .addAttribute("clubroles", all)
                 .addAttribute(pageNumbersAttributeKey, getPageNumbers(all));
-        return "clubs/list";
+        return "clubroles/list";
     }
 
-    @GetMapping("/clubs/{id}")
-    @PostAuthorize("hasRole('ROLE_ADMIN') or #model[club].userId == authentication.principal.id")
+    @GetMapping("/clubroles/{id}")
+    @PostAuthorize("hasRole('ROLE_ADMIN') or #model[clubrole].userId == authentication.principal.id")
     public String detail(@PathVariable("id") Integer id, ModelMap model) {
-        model.addAttribute("club", this.service.findById(id));
-        return "clubs/detail";
+        model.addAttribute("clubrole", this.service.findById(id));
+        return "clubroles/detail";
     }
 
-    @GetMapping("/clubs/{id}/edit")
-    @PostAuthorize("hasRole('ROLE_ADMIN') or #model[club].userId == authentication.principal.id")
+    @GetMapping("/clubroles/{id}/edit")
+    @PostAuthorize("hasRole('ROLE_ADMIN') or #model[clubrole].userId == authentication.principal.id")
     public String edit(@PathVariable("id") Integer id, ModelMap model) {
-        model.addAttribute("club", this.service.findById(id));
-        return "clubs/edit";
+        model.addAttribute("clubrole", this.service.findById(id));
+        return "clubroles/edit";
     }
 
-    @GetMapping("/clubs/create")
+    @GetMapping("/clubroles/create")
     public String create(ModelMap model) {
-        final ClubDTO dto = new ClubDTO();
+        final ClubRoleDTO dto = new ClubRoleDTO();
         dto.setId(((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
-        model.addAttribute("club", dto);
-        return "clubs/create";
+        model.addAttribute("clubrole", dto);
+        return "clubroles/create";
     }
 
     @Transactional
-    @PostMapping(value = { "/clubs/{id}/edit", "/clubs/create" })
-    public String save(ClubDTO dto) {
-        return String.format("redirect:/clubs/%s", this.service.save(dto));
+    @PostMapping(value = { "/clubroles/{id}/edit", "/clubroles/create" })
+    public String save(ClubRoleDTO dto) {
+        return String.format("redirect:/clubroles/%s", this.service.save(dto));
     }
-    @PostMapping({ "/clubs/{id}/delete" })
+    @PostMapping({ "/clubroles/{id}/delete" })
     @PostAuthorize("hasRole('ROLE_ADMIN')")
     public Object deleteUser(@PathVariable(value = "id") Integer id, SessionStatus status) {
         try {
@@ -80,18 +80,13 @@ public class ClubController extends AbstractController<ClubDTO> {
             status.setComplete();
             return new ModelAndView("error/errorHapus")
                     .addObject("entityId", id)
-                    .addObject("entityName", "club")
+                    .addObject("entityName", "clubrole")
                     .addObject("errorCause", exception.getRootCause().getMessage())
-                    .addObject("backLink", "/clubs");
+                    .addObject("backLink", "/clubroles");
         }
         status.setComplete();
-        return "redirect:/clubs";
+        return "redirect:/clubroles";
     }
-    @PostMapping({"/clubs/{id}/add"})
-    @PostAuthorize("hasRole('ROLE_ADMIN') or #model[club].userId == authentication.principal.id")
-    public String addUser(@PathVariable(value="id")Integer id, Integer userId, Integer roleId){
-        this.service.addUser(id, userId, roleId);
-        return "clubs/{id}/users";
-    }
+  
 
 }

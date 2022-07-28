@@ -3,14 +3,14 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Club's management</title>
+    <title>Club Management</title>
 </head>
 <body>
 <div layout:fragment="breadcrumb" th:object="${club}">
     <h1>Clubs Management</h1>
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/clubs"><i class="fa fa-tasks"></i> Clubs</a></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="/clubs"><i class="fa fa-tasks"></i>Clubs</a></li>
         <li class="active" th:text="@{'Club ID: <b>' + ${Clubs.Id}} + '</b>'"></li>
     </ol>
 </div>
@@ -27,10 +27,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="name" th:text="#{Clubs.Name}"></label>
-                                        <input type="text" class="form-control"
-                                               id="name"
-                                               th:field="${club.name}"
-                                               maxlength="255">
+                                        <input type="text" class="form-control" id="name" th:field="${club.name}" maxlength="255">
                                     </div>
                                 </div>
                             </div>
@@ -39,13 +36,10 @@
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/clubs/edit}" class="btn btn-default" role="button"
-                       title="Back list" th:text="#{General.Cancel}">
+                    <a th:href="@{/clubs/edit}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <button type="submit" class="box-title btn btn-primary"
-                            title="Save Data" th:text="#{General.Save}">
-                    </button>
+                    <button type="submit" class="box-title btn btn-primary" title="Save Data" th:text="#{General.Save}"></button>
                 </div>
             </form>
         </div>
